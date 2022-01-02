@@ -1,3 +1,7 @@
 thead {
  color: #337AB7;
 }
+
+.stars{
+    min-width: 200px;
+}

@@ -42,14 +42,18 @@
             <td>{{ product.productCode | lowercase | convertToSpaces:'-' }}</td>
             <td>{{ product.releaseDate }}</td>
             <td>{{ product.price | currency: 'GBP':'symbol':'1.2-2'}}</td>
-            <td>{{ product.starRating }}</td>
+            <td id='stars'>
+              <pm-star [rating] = 'product.starRating'
+              (ratingClicked)='onRatingClicked($event)'>
+            </pm-star>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-<div 
+<div *ngIf(errorMessage)
      class='alert alert-danger'>
   Error: {{ errorMessage }}
 </div>
